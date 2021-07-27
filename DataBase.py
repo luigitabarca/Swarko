@@ -1,3 +1,5 @@
+from datetime import date
+from datetime import datetime
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -13,17 +15,19 @@ mycursor = mydb.cursor()
 
 # mycursor.execute("CREATE TABLE inregistrari (id INT AUTO_INCREMENT PRIMARY KEY, ora VARCHAR(255), data VARCHAR(255), greutatea VARCHAR(255))")
 
-# sql = "INSERT INTO inregistrari (ora, data, greutatea) VALUES (%s, %s, %s)"
-# val = ("15:33", "21/06/2021", "245kg")
-# mycursor.execute(sql, val)
+sql = "INSERT INTO inregistrari (ora, data, greutatea) VALUES (%s, %s, %s)"
+now=datetime.now()
+dt_string = now.strftime(" %H:%M:%S")
+val = (dt_string, date.today(), "355kg")
+mycursor.execute(sql, val)
 
-# mydb.commit()
+mydb.commit()
 
-# print(mycursor.rowcount, "record inserted.")
+print(mycursor.rowcount, "record inserted.")
 
-mycursor.execute("SELECT * FROM inregistrari")
+# mycursor.execute("SELECT * FROM inregistrari")
 
-myresult = mycursor.fetchall()
+# myresult = mycursor.fetchall()
 
-for x in myresult:
-  print(x)
+# for x in myresult:
+#   print(x)
