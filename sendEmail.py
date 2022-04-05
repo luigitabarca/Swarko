@@ -39,7 +39,8 @@ def create_message():
     # Add body to email
     message.attach(MIMEText(body, "plain"))
 
-    filename = "font-colors.pdf"  # In same directory as script
+    #filename = "font-colors.pdf"  # In same directory as script
+    filename = "RaportCantarire.xlsx"
 
     # Open PDF file in binary mode
     with open(filename, "rb") as attachment:

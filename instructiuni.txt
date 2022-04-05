@@ -1,0 +1,2 @@
+scriptul C:\Users\luigi\source\repos\Swarko\GenerateExcelFile.py genereaza un raport excel(RaportCantarire.xlsx) cu cantaririrle din ziua curenta
+scriptul sendEmail trimite fisierul generat catre luigitabarca88@gmail.com
